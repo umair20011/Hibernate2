@@ -1,20 +1,23 @@
 package com.danish.HibernateLearning2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Laptop {
 	@Id
     private int lid;
     private String lname;
-    @ManyToOne
-    private Student student;
-	public Student getStudent() {
+    @ManyToMany
+    private List<Student> student=new ArrayList<>();
+	public List<Student> getStudent() {
 		return student;
 	}
-	public void setStudent(Student student) {
+	public void setStudent(List<Student> student) {
 		this.student = student;
 	}
 	public int getLid() {
