@@ -22,7 +22,7 @@ public class App
     	s.setName("Danish");
     	s.setRollno(1);
     	s.setMarks(50);
-    	s.setLaptop(laptop);
+    	s.getLaptop().add(laptop);
     	
     	Configuration con=new Configuration().configure().addAnnotatedClass(Laptop.class).addAnnotatedClass(Student.class);
     	SessionFactory sf=con.buildSessionFactory();

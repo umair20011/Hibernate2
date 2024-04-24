@@ -2,12 +2,21 @@ package com.danish.HibernateLearning2;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Laptop {
 	@Id
     private int lid;
     private String lname;
+    @ManyToOne
+    private Student student;
+	public Student getStudent() {
+		return student;
+	}
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 	public int getLid() {
 		return lid;
 	}
